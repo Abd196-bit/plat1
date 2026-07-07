@@ -47,20 +47,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
-radius = 30.0
-height = 90.0
+radius = 32.25138
+height = 105.07485
 
 [node name="player" type="CharacterBody2D" unique_id=425687638]
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(0.23716578, 0.27894762)
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=708974435]
-position = Vector2(-96, -12.000008)
+position = Vector2(-1.0000076, -1.9999981)
 scale = Vector2(5.181818, 5.1551723)
 sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1715790771]
+zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=832950777]
-position = Vector2(-98, -12)
 shape = SubResource("CapsuleShape2D_smehm")
