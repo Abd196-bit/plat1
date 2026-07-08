@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bqpk47h2u8j1a"]
+
+[ext_resource type="Script" uid="uid://bifupp1if04a2" path="res://scripts/coin.gd" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://77gsil1kabbw" path="res://assets/coin.png" id="1_rwqht"]
+[ext_resource type="AudioStream" uid="uid://b7nuna62jwgs7" path="res://sounds/pickupCoin (1).wav" id="3_11l1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i64fm"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(0, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11l1o"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(9, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d14el"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(18, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ikuy"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(27, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnlwo"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(36, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jig8b"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(45, 0, 9, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmuha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i64fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11l1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d14el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ikuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnlwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jig8b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfxoj"]
+radius = 4.0
+height = 12.0
+
+[node name="coin" type="Area2D" unique_id=1024229925]
+script = ExtResource("1_i64fm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1031303122]
+sprite_frames = SubResource("SpriteFrames_xmuha")
+autoplay = "default"
+frame_progress = 0.8803064
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2023678881]
+shape = SubResource("CapsuleShape2D_kfxoj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=237016145]
+stream = ExtResource("3_11l1o")

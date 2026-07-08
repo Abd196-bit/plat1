@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://chyr4coixjx65" path="res://assets/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bvlvaxfud8j1v" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://bcn1ov1muukbj" path="res://sounds/jump.wav" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -23,6 +24,30 @@ region = Rect2(66, 0, 22, 29)
 atlas = ExtResource("1_3vyb7")
 region = Rect2(88, 0, 22, 29)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(352, 0, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(110, 0, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(132, 0, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(154, 0, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(286, 0, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(308, 0, 22, 29)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_fjrip"]
 animations = [{
 "frames": [{
@@ -43,26 +68,61 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
 radius = 32.25138
-height = 105.07485
+height = 86.03766
 
-[node name="player" type="CharacterBody2D" unique_id=425687638]
+[node name="player" type="CharacterBody2D" unique_id=425687638 groups=["player"]]
 position = Vector2(2.3841858e-07, 0)
 scale = Vector2(0.23716578, 0.27894762)
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=708974435]
-position = Vector2(-1.0000076, -1.9999981)
-scale = Vector2(5.181818, 5.1551723)
+position = Vector2(7.5152206, 0)
+scale = Vector2(4.683202, 4)
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"idle"
+animation = &"jump"
+autoplay = "idle"
+frame_progress = 0.4997826
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1715790771]
 zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=832950777]
+position = Vector2(8.4329195, 0)
 shape = SubResource("CapsuleShape2D_smehm")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=215895099]
+stream = ExtResource("3_qhqgy")
+volume_db = 3.0
