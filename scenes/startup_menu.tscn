@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://ds4b76o7g3hls"]
+
+[ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="1_s5o28"]
+[ext_resource type="Script" uid="uid://jltkmimqe1jx" path="res://scripts/button.gd" id="2_jtugw"]
+[ext_resource type="AudioStream" uid="uid://du6tnisb8a05q" path="res://sounds/563178__gronnie__final_background_music.wav" id="3_t8iw3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtugw"]
+bg_color = Color(0.0361009, 0.036100917, 0.036100868, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8iw3"]
+bg_color = Color(0.846491, 0.64164287, 0.22665033, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 1
+shadow_color = Color(0.78775924, 0.78775924, 0.78775924, 0.6)
+shadow_size = 58
+anti_aliasing_size = 0.01
+
+[node name="StartupMenu" type="Control" unique_id=1701934437]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=75673008]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jtugw")
+
+[node name="Button" type="Button" parent="." unique_id=291691356]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -17.0
+offset_right = 216.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_outline_color = Color(0.001711311, 7.0724265e-05, 0.002677755, 1)
+theme_override_fonts/font = ExtResource("1_s5o28")
+theme_override_font_sizes/font_size = 89
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8iw3")
+text = "PLAY"
+script = ExtResource("2_jtugw")
+
+[node name="Label" type="Label" parent="." unique_id=1496994805]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -302.0
+offset_top = 128.0
+offset_right = 472.0
+offset_bottom = 317.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_s5o28")
+theme_override_font_sizes/font_size = 90
+text = "platformer"
+uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1616856441]
+stream = ExtResource("3_t8iw3")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
