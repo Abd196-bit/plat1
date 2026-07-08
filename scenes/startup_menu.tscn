@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://ds4b76o7g3hls"]
 
+[ext_resource type="Texture2D" uid="uid://rar86ipeyatx" path="res://assets/backdrop.png" id="1_ebq67"]
 [ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="1_s5o28"]
 [ext_resource type="Script" uid="uid://jltkmimqe1jx" path="res://scripts/button.gd" id="2_jtugw"]
 [ext_resource type="AudioStream" uid="uid://du6tnisb8a05q" path="res://sounds/563178__gronnie__final_background_music.wav" id="3_t8iw3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtugw"]
-bg_color = Color(0.0361009, 0.036100917, 0.036100868, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8iw3"]
 bg_color = Color(0.846491, 0.64164287, 0.22665033, 1)
@@ -31,11 +29,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="." unique_id=75673008]
+[node name="Backdrop" type="Sprite2D" parent="." unique_id=1646661544]
+position = Vector2(572, 327)
+texture = ExtResource("1_ebq67")
+
+[node name="Panel" type="Panel" parent="." unique_id=1116329867]
 layout_mode = 0
-offset_right = 1149.0
-offset_bottom = 646.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jtugw")
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 1139.0
+offset_bottom = 642.0
 
 [node name="Button" type="Button" parent="." unique_id=291691356]
 layout_mode = 1
@@ -44,10 +47,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -208.0
-offset_top = -17.0
-offset_right = 216.0
-offset_bottom = 93.0
+offset_left = -210.0
+offset_top = 114.0
+offset_right = 214.0
+offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"FlatButton"

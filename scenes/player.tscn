@@ -106,15 +106,17 @@ height = 86.03766
 [node name="player" type="CharacterBody2D" unique_id=425687638 groups=["player"]]
 position = Vector2(2.3841858e-07, 0)
 scale = Vector2(0.23716578, 0.27894762)
+floor_max_angle = 1.0471976
+floor_snap_length = 8.0
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=708974435]
 position = Vector2(7.5152206, 0)
 scale = Vector2(4.683202, 4)
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.4997826
+frame_progress = 0.3712447
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1715790771]
 zoom = Vector2(3, 3)
@@ -122,6 +124,7 @@ zoom = Vector2(3, 3)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=832950777]
 position = Vector2(8.4329195, 0)
 shape = SubResource("CapsuleShape2D_smehm")
+one_way_collision = true
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=215895099]
 stream = ExtResource("3_qhqgy")
