@@ -120,6 +120,8 @@ frame_progress = 0.3712447
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1715790771]
 zoom = Vector2(3, 3)
+limit_bottom = 683
+limit_smoothed = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=832950777]
 position = Vector2(8.4329195, 0)

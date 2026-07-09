@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://dgm31pcuhhflh" path="res://scripts/coin counter.gd" id="5_iywne"]
 [ext_resource type="FontFile" uid="uid://b7d1lk4qdomwr" path="res://assets/PressStart2P-Regular.ttf" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://cq2ykpnjk6k2l" path="res://assets/BG.jpg" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://dibf453kb0cwf" path="res://scenes/killzone.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://bd73qj1b8m7nl" path="res://scenes/slime.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -349,6 +351,9 @@ sources/2 = SubResource("TileSetAtlasSource_u5sy4")
 font = ExtResource("7_u5sy4")
 font_color = Color(0.99999994, 0.8786634, 0.13137543, 1)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vtaks"]
+distance = -822.0
+
 [node name="level 1" type="Node2D" unique_id=1187666195]
 position = Vector2(0, 1)
 
@@ -517,3 +522,11 @@ offset_right = 51.0
 offset_bottom = 30.0
 label_settings = SubResource("LabelSettings_p57ef")
 metadata/_edit_use_anchors_ = true
+
+[node name="Killzone" parent="." unique_id=873119470 instance=ExtResource("9_0tnpc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1539547844]
+shape = SubResource("WorldBoundaryShape2D_vtaks")
+
+[node name="Slime" parent="." unique_id=505357220 instance=ExtResource("10_vtaks")]
+position = Vector2(638, 421)
