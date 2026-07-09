@@ -353,7 +353,7 @@ font_color = Color(0.99999994, 0.8786634, 0.13137543, 1)
 position = Vector2(0, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2004874105]
-scroll_scale = Vector2(0.01, 0.01)
+scroll_scale = Vector2(0.3, 0.3)
 repeat_size = Vector2(922, 601)
 repeat_times = 2
 
