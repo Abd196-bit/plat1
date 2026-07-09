@@ -34,6 +34,10 @@ func _physics_process(delta: float) -> void:
 	# Update animation
 	update_animation(direction)
 
+func die() -> void:
+	animated_sprite_2d.play("death")
+	set_physics_process(false)  # stop movement while dying
+
 
 func update_animation(direction: float) -> void:
 	if direction != 0:
