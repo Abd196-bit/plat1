@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://chjhr1humvoa2" path="res://sounds/849565__fonoskop__pompelo_110.wav" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://dgm31pcuhhflh" path="res://scripts/coin counter.gd" id="5_iywne"]
 [ext_resource type="FontFile" uid="uid://b7d1lk4qdomwr" path="res://assets/PressStart2P-Regular.ttf" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cq2ykpnjk6k2l" path="res://assets/BG.jpg" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -351,6 +352,16 @@ font_color = Color(0.99999994, 0.8786634, 0.13137543, 1)
 [node name="level 1" type="Node2D" unique_id=1187666195]
 position = Vector2(0, 1)
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2004874105]
+scroll_scale = Vector2(0.01, 0.01)
+repeat_size = Vector2(922, 601)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1357507032]
+position = Vector2(400, 192)
+scale = Vector2(1.4346812, 1.7305555)
+texture = ExtResource("8_gee14")
+
 [node name="TileMap" type="TileMap" parent="." unique_id=1424273777]
 position = Vector2(8, 1)
 tile_set = SubResource("TileSet_lbhrr")
@@ -505,3 +516,4 @@ offset_top = 7.0
 offset_right = 51.0
 offset_bottom = 30.0
 label_settings = SubResource("LabelSettings_p57ef")
+metadata/_edit_use_anchors_ = true
