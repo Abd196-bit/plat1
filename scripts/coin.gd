@@ -17,6 +17,11 @@ func _on_body_entered(body: Node2D) -> void:
 func collect() -> void:
 	collected.emit()
 
+	# Add coin to counter
+	var ui = get_tree().get_first_node_in_group("ui")
+	if ui:
+		ui.add_coin()
+
 	# Prevent double-collection and hide the coin immediately
 	collision_shape_2d.set_deferred("disabled", true)
 	hide()
