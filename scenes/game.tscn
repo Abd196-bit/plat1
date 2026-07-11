@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://1wsgc0h2ysx5"]
 
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://dsgryt5b6c0eb" path="res://map.png" id="1_vtaks"]
 [ext_resource type="Texture2D" uid="uid://1j8ij2nb4aks" path="res://assets/world_tileset.png" id="2_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dcukr0pr8g1j7" path="res://assets/Grassland_Terrain_Tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bqpk47h2u8j1a" path="res://scenes/coin.tscn" id="3_lnu2h"]
 [ext_resource type="AudioStream" uid="uid://chjhr1humvoa2" path="res://sounds/849565__fonoskop__pompelo_110.wav" id="4_lbhrr"]
 [ext_resource type="Script" path="res://scripts/coin counter.gd" id="5_iywne"]
-[ext_resource type="FontFile" uid="uid://b7d1lk4qdomwr" path="res://assets/PressStart2P-Regular.ttf" id="7_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://cq2ykpnjk6k2l" path="res://assets/BG.jpg" id="8_gee14"]
+[ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="8_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dibf453kb0cwf" path="res://scenes/killzone.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" path="res://scenes/slime.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://bd73qj1b8m7nl" path="res://scenes/slime.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -347,9 +347,27 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 sources/2 = SubResource("TileSetAtlasSource_u5sy4")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
+bg_color = Color(1, 0.87058824, 0.14117648, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9882353, 0.8117647, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
+bg_color = Color(0.7074712, 0.57029045, 0.45374674, 1)
+draw_center = false
+
 [sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
-font = ExtResource("7_u5sy4")
-font_color = Color(0.99999994, 0.8786634, 0.13137543, 1)
+font = ExtResource("8_kvpfn")
+font_size = 18
+font_color = Color(0.012617188, 0.009122922, 0.002044355, 1)
+shadow_size = 10
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vtaks"]
 distance = -822.0
@@ -365,7 +383,7 @@ repeat_times = 2
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1357507032]
 position = Vector2(399.87503, 204.24998)
 scale = Vector2(1.4342926, 1.798611)
-texture = ExtResource("8_gee14")
+texture = ExtResource("1_vtaks")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1424273777]
 position = Vector2(8, 1)
@@ -512,14 +530,28 @@ stream = ExtResource("4_lbhrr")
 volume_db = -16.041
 autoplay = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=551166930 groups=["ui"]]
+[node name="canvaslayer" type="CanvasLayer" parent="." unique_id=551166930 groups=["ui"]]
 script = ExtResource("5_iywne")
 
-[node name="CoinLabel" type="Label" parent="CanvasLayer" unique_id=1771132608]
-offset_left = 11.0
-offset_top = 7.0
-offset_right = 51.0
-offset_bottom = 30.0
+[node name="Panel" type="Panel" parent="canvaslayer" unique_id=128589080]
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 36.0
+scale = Vector2(8.92641, 1.9717836)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vtaks")
+
+[node name="CoinLabel" type="Label" parent="canvaslayer" unique_id=1771132608]
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 47.0
+rotation = -0.010311533
+scale = Vector2(3.4030752, 3.4617646)
+pivot_offset = Vector2(-0.37323618, 0.16875386)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/focus = SubResource("StyleBoxFlat_kvpfn")
+text = "coins"
 label_settings = SubResource("LabelSettings_p57ef")
 metadata/_edit_use_anchors_ = true
 
