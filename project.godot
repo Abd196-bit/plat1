@@ -13,7 +13,7 @@ config_version=5
 config/name="Platformer"
 run/main_scene="uid://ds4b76o7g3hls"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://scenes/icon.svg"
 
 [global_group]
 

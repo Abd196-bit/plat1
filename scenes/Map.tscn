@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://map"]
 
 [ext_resource type="Texture2D" uid="uid://dsgryt5b6c0eb" path="res://map.png" id="1_7ctrk"]
-[ext_resource type="PackedScene" path="res://map/Layer_0_0.tscn" id="2_ii6k2"]
+[ext_resource type="PackedScene" path="res://Layer_0_0.tscn" id="2_ii6k2"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://scenes/player.tscn" id="3_46d0c"]
 [ext_resource type="AudioStream" uid="uid://chjhr1humvoa2" path="res://sounds/849565__fonoskop__pompelo_110.wav" id="4_d46yu"]
-[ext_resource type="Script" path="res://scripts/coin counter.gd" id="5_hit12"]
+[ext_resource type="Script" uid="uid://dgm31pcuhhflh" path="res://scripts/coin counter.gd" id="5_hit12"]
 [ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="6_sdw7q"]
 [ext_resource type="PackedScene" uid="uid://dibf453kb0cwf" path="res://scenes/killzone.tscn" id="7_pgwcf"]
 [ext_resource type="PackedScene" uid="uid://bd73qj1b8m7nl" path="res://scenes/slime.tscn" id="8_djx7b"]
@@ -46,10 +46,12 @@ position = Vector2(399.87503, 204.24998)
 scale = Vector2(1.4342926, 1.798611)
 texture = ExtResource("1_7ctrk")
 
-[node name="Layer_0_0" parent="." unique_id=1254702796 instance=ExtResource("2_ii6k2")]
+[node name="Layer_0_1" parent="." unique_id=259882012 instance=ExtResource("2_ii6k2")]
+position = Vector2(98, 132)
+collision_enabled = true
 
 [node name="player" parent="." unique_id=425687638 instance=ExtResource("3_46d0c")]
-position = Vector2(67, 173)
+position = Vector2(140.99998, 311.00003)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=79929367]
 stream = ExtResource("4_d46yu")
@@ -86,5 +88,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1817769793]
 shape = SubResource("WorldBoundaryShape2D_r402g")
 
-[node name="Slime" parent="." unique_id=505357220 instance=ExtResource("8_djx7b")]
+[node name="Slime" type="Node" parent="." unique_id=505357220]
+
+[node name="Slime2" parent="Slime" unique_id=1512060078 instance=ExtResource("8_djx7b")]
 position = Vector2(638, 421)
