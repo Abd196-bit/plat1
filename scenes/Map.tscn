@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://map"]
+
+[ext_resource type="Texture2D" uid="uid://dsgryt5b6c0eb" path="res://map.png" id="1_7ctrk"]
+[ext_resource type="PackedScene" path="res://map/Layer_0_0.tscn" id="2_ii6k2"]
+[ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://scenes/player.tscn" id="3_46d0c"]
+[ext_resource type="AudioStream" uid="uid://chjhr1humvoa2" path="res://sounds/849565__fonoskop__pompelo_110.wav" id="4_d46yu"]
+[ext_resource type="Script" path="res://scripts/coin counter.gd" id="5_hit12"]
+[ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="6_sdw7q"]
+[ext_resource type="PackedScene" uid="uid://dibf453kb0cwf" path="res://scenes/killzone.tscn" id="7_pgwcf"]
+[ext_resource type="PackedScene" uid="uid://bd73qj1b8m7nl" path="res://scenes/slime.tscn" id="8_djx7b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxh8t"]
+bg_color = Color(1, 0.87058824, 0.14117648, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9882353, 0.8117647, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4fdk"]
+bg_color = Color(0.7074712, 0.57029045, 0.45374674, 1)
+draw_center = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_08blb"]
+font = ExtResource("6_sdw7q")
+font_size = 18
+font_color = Color(0.012617188, 0.009122922, 0.002044355, 1)
+shadow_size = 10
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r402g"]
+distance = -822.0
+
+[node name="map" type="Node2D" unique_id=908575569]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1813598426]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(922, 601)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1236959562]
+position = Vector2(399.87503, 204.24998)
+scale = Vector2(1.4342926, 1.798611)
+texture = ExtResource("1_7ctrk")
+
+[node name="Layer_0_0" parent="." unique_id=1254702796 instance=ExtResource("2_ii6k2")]
+
+[node name="player" parent="." unique_id=425687638 instance=ExtResource("3_46d0c")]
+position = Vector2(67, 173)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=79929367]
+stream = ExtResource("4_d46yu")
+volume_db = -16.041
+autoplay = true
+
+[node name="canvaslayer" type="CanvasLayer" parent="." unique_id=126603097 groups=["ui"]]
+script = ExtResource("5_hit12")
+
+[node name="Panel" type="Panel" parent="canvaslayer" unique_id=2130308261]
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 36.0
+scale = Vector2(8.92641, 1.9717836)
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxh8t")
+
+[node name="CoinLabel" type="Label" parent="canvaslayer" unique_id=1627780126]
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 47.0
+rotation = -0.010311533
+scale = Vector2(3.4030752, 3.4617646)
+pivot_offset = Vector2(-0.37323618, 0.16875386)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/focus = SubResource("StyleBoxFlat_u4fdk")
+text = "coins"
+label_settings = SubResource("LabelSettings_08blb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Killzone" parent="." unique_id=873119470 instance=ExtResource("7_pgwcf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1817769793]
+shape = SubResource("WorldBoundaryShape2D_r402g")
+
+[node name="Slime" parent="." unique_id=505357220 instance=ExtResource("8_djx7b")]
+position = Vector2(638, 421)
