@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dcukr0pr8g1j7" path="res://assets/Grassland_Terrain_Tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bqpk47h2u8j1a" path="res://scenes/coin.tscn" id="3_lnu2h"]
 [ext_resource type="AudioStream" uid="uid://chjhr1humvoa2" path="res://sounds/849565__fonoskop__pompelo_110.wav" id="4_lbhrr"]
-[ext_resource type="Script" path="res://scripts/coin counter.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://dgm31pcuhhflh" path="res://scripts/coin counter.gd" id="5_iywne"]
 [ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="8_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dibf453kb0cwf" path="res://scenes/killzone.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bd73qj1b8m7nl" path="res://scenes/slime.tscn" id="10_vtaks"]
