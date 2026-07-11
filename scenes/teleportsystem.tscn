@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dbs67x0syofpo"]
+
+[ext_resource type="Script" uid="uid://3hegagfe5dtx" path="res://scripts/teleportsystem.gd" id="1_j6nf3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6nf3"]
+radius = 69.115845
+
+[node name="teleportsystem" type="Area2D" unique_id=1819467524]
+script = ExtResource("1_j6nf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=149249071]
+shape = SubResource("CircleShape2D_j6nf3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
