@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b0i0yepqt2n3e"]
+
+[ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="1_v2lfg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tg4cr"]
+line_spacing = -12.0
+font = ExtResource("1_v2lfg")
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_37rai"]
+font = ExtResource("1_v2lfg")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1490248754]
+
+[node name="Panel" type="Panel" parent="." unique_id=1919357782]
+offset_left = -18.0
+offset_top = 427.0
+offset_right = 1162.0
+offset_bottom = 647.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel" unique_id=186377383]
+layout_mode = 0
+offset_right = 1180.0
+offset_bottom = 220.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=939030561]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 93.0
+offset_right = 1148.0
+offset_bottom = 192.0
+text = "Everyone says the highest hill can't be climbed.
+
+You decide to prove them wrong."
+label_settings = SubResource("LabelSettings_tg4cr")
+
+[node name="Label2" type="Label" parent="Panel" unique_id=495162051]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -427.0
+offset_right = 58.0
+offset_bottom = -404.0
+text = "You0"
+label_settings = SubResource("LabelSettings_37rai")
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1595044832]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel" unique_id=2007451922]

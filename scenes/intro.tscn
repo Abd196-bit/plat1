@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://boh05xs2w7u4"]
+
+[ext_resource type="Script" uid="uid://2vt0gjic5b1x" path="res://scripts/intro.gd" id="1_yjqpq"]
+[ext_resource type="Texture2D" uid="uid://cj3w0lihiktx" path="res://assets/MountainBackground.png" id="2_yjqpq"]
+[ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="3_4bx60"]
+[ext_resource type="AudioStream" uid="uid://tl3cb8cnfr0e" path="res://assets/typing.mp3" id="4_i2l1n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i2l1n"]
+font = ExtResource("3_4bx60")
+
+[node name="intro" type="Control" unique_id=1454785936]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_yjqpq")
+
+[node name="Map" type="Sprite2D" parent="." unique_id=2063029741]
+position = Vector2(573.5, 326)
+scale = Vector2(0.9007813, 0.8944444)
+texture = ExtResource("2_yjqpq")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1983329649]
+scroll_offset = Vector2(-3, 579)
+repeat_size = Vector2(64, 1)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=33785481]
+position = Vector2(545, 613)
+scale = Vector2(1, 0.84375)
+
+[node name="Panel" type="Panel" parent="." unique_id=1997380768]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 578.0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1572643554]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 20.0
+offset_right = 1153.0
+offset_bottom = 47.0
+tab_size = 24
+
+[node name="Label" type="Label" parent="Panel" unique_id=2040891205]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 50.0
+offset_right = 70.0
+offset_bottom = 92.0
+label_settings = SubResource("LabelSettings_i2l1n")
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=964303270]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 78.0
+offset_bottom = 48.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel" unique_id=1493634234]
+stream = ExtResource("4_i2l1n")
+autoplay = true
