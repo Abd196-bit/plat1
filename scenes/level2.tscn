@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dmdoa7ls52tnr"]
+[gd_scene format=3 uid="uid://vqmu8mt6atr2"]
 
 [node name="map" type="Node2D" unique_id=169904426]
 scale = Vector2(87.91172, -78.83163)

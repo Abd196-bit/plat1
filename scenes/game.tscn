@@ -10,7 +10,6 @@
 [ext_resource type="FontFile" uid="uid://c4mbb1oguop6s" path="res://Qilka-Bold copy.otf" id="8_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dibf453kb0cwf" path="res://scenes/killzone.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bd73qj1b8m7nl" path="res://scenes/slime.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" uid="uid://dbs67x0syofpo" path="res://scenes/teleportsystem.tscn" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -563,6 +562,3 @@ shape = SubResource("WorldBoundaryShape2D_vtaks")
 
 [node name="Slime" parent="." unique_id=505357220 instance=ExtResource("10_vtaks")]
 position = Vector2(638, 421)
-
-[node name="teleportsystem" parent="." unique_id=1819467524 instance=ExtResource("11_kvpfn")]
-position = Vector2(2957, 185)
